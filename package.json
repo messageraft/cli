@@ -34,6 +34,8 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
     "cosmiconfig": "^7.0.1",
     "debug": "^4.3.2",
     "enquirer": "^2.3.6",

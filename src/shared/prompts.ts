@@ -1,9 +1,24 @@
 import { promptWrapper } from './utils'
 import chalk from 'chalk'
-import { Providers } from '../providers'
+import { ProvidersManifest } from '@messageraft/common'
+
+interface BasePromptConfig {
+  name: string
+  message: string
+  validate?: (value: string) => boolean | string
+}
+
+interface InputPromptConfig extends BasePromptConfig {
+  type: 'input'
+}
+
+interface MultiSelectPromptConfig extends BasePromptConfig {
+  type: 'multiselect'
+  choices: { name: string; value: string }[]
+}
 
 export interface IPromptConfig {
-  config: any
+  config: InputPromptConfig | MultiSelectPromptConfig
   tip?: string
 }
 
@@ -24,9 +39,11 @@ const prompts: { [key: string]: IPromptConfig } = {
   },
   providers: {
     config: {
+      name: 'providers',
       type: 'multiselect',
-      message: 'Choose providers',
-      choices: Providers.map(({ name, packageName }) => ({
+      message:
+        'Choose providers (Press <space> to select, press <enter> to confirm)',
+      choices: ProvidersManifest.map(({ name, packageName }) => ({
         name,
         value: packageName,
       })),
