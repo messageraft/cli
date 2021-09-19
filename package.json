@@ -1,11 +1,35 @@
 {
   "name": "@messageraft/cli",
   "version": "0.0.1",
-  "author": "Petros Kyriakou @pitops",
   "bin": {
     "messageraft": "./bin/run"
   },
-  "bugs": "https://github.com/pitops/cli/issues",
+  "description": "CLI for Messageraft",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "messageraft",
+    "messageraft-cli",
+    "oclif"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "homepage": "https://messageraft.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/messageraft/cli.git"
+  },
+  "bugs": "https://github.com/messageraft/cli/issues",
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "author": "Messageraft",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -14,6 +38,7 @@
     "debug": "^4.3.2",
     "enquirer": "^2.3.6",
     "execa": "^5.1.1",
+    "fs-extra": "^10.0.0",
     "ink": "^3.0.9",
     "ora": "5.4.1",
     "react": "^17.0.2",
@@ -24,6 +49,7 @@
     "@oclif/dev-cli": "^1",
     "@types/debug": "^4.1.7",
     "@types/execa": "^2.0.0",
+    "@types/fs-extra": "^9.0.12",
     "@types/node": "^10",
     "@types/ora": "^3.2.0",
     "@types/react": "^17.0.20",
@@ -39,21 +65,11 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "files": [
-    "/bin",
-    "/lib"
-  ],
-  "homepage": "https://github.com/messageraft/messageraft-cli",
-  "keywords": [
-    "oclif"
-  ],
-  "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "bin": "messageraft",
     "commands": "./lib/commands"
   },
-  "repository": "pitops/cli",
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
