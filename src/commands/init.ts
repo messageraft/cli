@@ -4,14 +4,16 @@ import yarnOrNpm from 'yarn-or-npm'
 import execa from 'execa'
 import * as path from 'path'
 import ora from 'ora'
-import fse from 'fs-extra'
+import fse, { outputFile } from 'fs-extra'
+import boxen from 'boxen'
+import chalk from 'chalk'
+
+import { ManifestProvider, ProviderName } from '@messageraft/common'
+import { ProvidersManifest } from '@messageraft/common'
 
 import Base from '../shared/base'
 import { askFor } from '../shared/prompts'
-import { ProviderName } from '@messageraft/common'
-import { ProvidersManifest } from '@messageraft/common'
-import boxen from 'boxen'
-import chalk from 'chalk'
+import { EnvConfigurationBuilder } from '../envConfigurationBuilder'
 
 const debug = debugInit('messageraft:init')
 
@@ -43,7 +45,7 @@ class MessageraftCli extends Base {
 
     if (!selectedProviders) return
 
-    const providers = ProvidersManifest.filter((provider) =>
+    const providers: ManifestProvider[] = ProvidersManifest.filter((provider) =>
       selectedProviders.find(
         (selectedProvider) => selectedProvider === provider.name,
       ),
@@ -72,8 +74,7 @@ class MessageraftCli extends Base {
       'git@github.com:messageraft/messageraft-server.git',
       '.',
     ])
-    const { stdout: rmRfDotGit } = await execa('rm', ['-rf', '.git'])
-    console.log(rmRfDotGit)
+    console.log(gitCloneStdOut)
     spinner.succeed()
 
     spinner.start('Installing providers')
@@ -85,6 +86,22 @@ class MessageraftCli extends Base {
       ),
     ])
     console.log(providersStdOut)
+    spinner.succeed()
+
+    spinner.start('Cleaning up')
+    const { stdout: rmRfDotGitStdOut } = await execa('rm', ['-rf', '.git'])
+    console.log(rmRfDotGitStdOut)
+
+    const envConfig = EnvConfigurationBuilder(providers)
+    const { stdout: replaceConfigStdOut } = await execa('rm', [
+      '-rf',
+      'config/configuration.ts',
+    ])
+    console.log(replaceConfigStdOut)
+    await outputFile(`${process.cwd()}/config/configuration.ts`, envConfig)
+
+    const { stdout: prettierStdOut } = await execa(packageManager, ['format'])
+    console.log(prettierStdOut)
     spinner.succeed()
 
     console.log(
