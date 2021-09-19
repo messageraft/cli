@@ -5,7 +5,7 @@ import { ProvidersManifest } from '@messageraft/common'
 interface BasePromptConfig {
   name: string
   message: string
-  validate?: (value: string) => boolean | string
+  validate?: (value: any) => boolean | string
 }
 
 interface InputPromptConfig extends BasePromptConfig {
@@ -43,6 +43,10 @@ const prompts: { [key: string]: IPromptConfig } = {
       type: 'multiselect',
       message:
         'Choose providers (Press <space> to select, press <enter> to confirm)',
+      validate: (value: string[]) => {
+        if (!value.length) return 'You must select at least one provider'
+        return true
+      },
       choices: ProvidersManifest.map(({ name, packageName }) => ({
         name,
         value: packageName,
