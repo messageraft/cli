@@ -60,35 +60,7 @@ $ messageraft init <directory-name>
 
 ### Step 3 - Setup ENV variables
 Last step before spinning up the server is to setup the environment variables. Check `config/env/development.example.env` on necessary details needed based on the providers you selected
-```bash
-# development.example.env
 
-DOMAIN=http://localhost
-PORT=3000
-
-# NOTE: only credentials configured in configuration.ts are used
-
-#######################################
-# SENDGRID
-SENDGRID_API_KEY='XYZ'
-#**************************************
-
-#######################################
-# TWILIO
-TWILIO_ACCOUNT_SID=''
-TWILIO_AUTH_TOKEN=''
-# OPTIONAL - Alternatively can provide during request
-TWILIO_PHONE_NUMBER=''
-#**************************************
-
-#######################################
-# SLACK
-SLACK_TOKEN=''
-# OPTIONAL - Alternatively can provide during request
-SLACK_CHANNEL=''
-#**************************************
-
-```
 > IMPORTANT: Don't forget to rename development.example.env -> development.env
 
 ### Step 4 - Start server and send request
@@ -103,6 +75,23 @@ OR
 $ yarn start:dev
 ```
 NOTE: Ideally if you are going to deploy then you should first build the server before running, also creating a `production.env` file is required
+
+### Step 5 - Send a message
+
+```bash
+curl --request POST \
+--header "Content-Type: application/json" \
+--data '{
+  "data": {
+   "to": "xyz@gmail.com",
+   "from": "hello@messageraft.com",
+   "subject": "Testing",
+   "html": "<p>Hello <strong>World</strong></p>"
+  }
+}' \
+http://localhost:3000/message/send/sendgrid
+```
+
 
 <!-- usagestop -->
 
