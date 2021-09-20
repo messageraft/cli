@@ -10,7 +10,7 @@
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 [![Version](https://img.shields.io/npm/v/@messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
-[![License](https://img.shields.io/npm/l/@messageraft/cli.svg)](https://github.com/messageraft/cli/blob/main/package.json)
+[![License](https://img.shields.io/npm/l/@messageraft/cli)](https://github.com/messageraft/cli/blob/main/package.json)
 [![GitHub Issues](https://img.shields.io/github/issues/messageraft/cli.svg)](https://github.com/messageraft/cli/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/messageraft/cli.svg)](https://github.com/messageraft/cli/pulls)
 </div>
