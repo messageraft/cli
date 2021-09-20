@@ -48,7 +48,7 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@messageraft/common": "0.0.2",
+    "@messageraft/common": "0.0.3",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
