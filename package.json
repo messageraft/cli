@@ -4,13 +4,17 @@
   "bin": {
     "messageraft": "./bin/run"
   },
-  "description": "CLI for Messageraft",
+  "description": "CLI for Messageraft - Notification Gateway for sending emails, SMS, direct chat and more",
   "keywords": [
     "javascript",
     "typescript",
     "messageraft",
     "messageraft-cli",
-    "oclif"
+    "oclif",
+    "notifications",
+    "slack",
+    "sendgrid",
+    "twilio"
   ],
   "license": "Apache-2.0",
   "licenses": [
