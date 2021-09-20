@@ -25,14 +25,9 @@
 ## 📝 Table of Contents
 
 <!-- toc -->
-* [development.example.env](#developmentexampleenv)
-* [NOTE: only credentials configured in configuration.ts are used](#note-only-credentials-configured-in-configurationts-are-used)
-* [SENDGRID](#sendgrid)
-* [TWILIO](#twilio)
-* [OPTIONAL - Alternatively can provide during request](#optional---alternatively-can-provide-during-request)
-* [SLACK](#slack)
-* [OPTIONAL - Alternatively can provide during request](#optional---alternatively-can-provide-during-request-1)
-* [Start server locally](#start-server-locally)
+- [About](#about)
+- [Getting Started](#getting-started)
+- [Authors](#authors)
 <!-- tocstop -->
 
 <!-- about -->
