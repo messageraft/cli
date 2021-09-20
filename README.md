@@ -27,6 +27,7 @@
 <!-- toc -->
 - [About](#about)
 - [Getting Started](#getting-started)
+- [API Documentation](#api-documentation)
 - [Authors](#authors)
 <!-- tocstop -->
 
@@ -92,6 +93,15 @@ curl --request POST \
 http://localhost:3000/message/send/sendgrid
 ```
 
+## ✍️ API Documentation <a name = "api-documentation"></a>
+
+Messageraft is using Swagger to host the documentation, simply navigate to 
+
+```
+http://localhost:3000/api
+```
+
+to view the documentation
 
 <!-- usagestop -->
 
