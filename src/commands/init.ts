@@ -14,6 +14,7 @@ import { ProvidersManifest } from '@messageraft/common'
 import Base from '../shared/base'
 import { askFor } from '../shared/prompts'
 import { EnvConfigurationBuilder } from '../envConfigurationBuilder'
+import { ProviderErrorHandlerBuilder } from '../providerErrorHandlerBuilder'
 
 const debug = debugInit('messageraft:init')
 
@@ -99,6 +100,17 @@ class MessageraftCli extends Base {
     ])
     console.log(replaceConfigStdOut)
     await outputFile(`${process.cwd()}/config/configuration.ts`, envConfig)
+
+    const providerErrorHandler = ProviderErrorHandlerBuilder(providers)
+    const { stdout: providerErrorHandlerStdOut } = await execa('rm', [
+      '-rf',
+      'src/message-raft/providerErrorHandler.ts',
+    ])
+    console.log(providerErrorHandlerStdOut)
+    await outputFile(
+      `${process.cwd()}/src/message-raft/providerErrorHandler.ts`,
+      providerErrorHandler,
+    )
 
     const { stdout: prettierStdOut } = await execa(packageManager, ['format'])
     console.log(prettierStdOut)
