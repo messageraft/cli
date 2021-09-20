@@ -36,10 +36,10 @@ export function EnvConfigurationBuilder(providers: ManifestProvider[]) {
           accumulator += `${provider.name.toLowerCase()}: {${SLACK_TEMPLATE}}`
           break
         case ProviderName.TWILIO:
-          accumulator += `${provider.name.toLowerCase()}: {${SLACK_TEMPLATE}}`
+          accumulator += `${provider.name.toLowerCase()}: {${TWILIO_TEMPLATE}}`
           break
         case ProviderName.SENDGRID:
-          accumulator += `${provider.name.toLowerCase()}: {${SLACK_TEMPLATE}}`
+          accumulator += `${provider.name.toLowerCase()}: {${SENDGRID_TEMPLATE}}`
           break
         default:
           throw new Error(`Provider template not found: ${provider.name}`)
