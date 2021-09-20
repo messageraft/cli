@@ -8,9 +8,9 @@
 <div align="center">
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
-[![Version](https://img.shields.io/npm/v/messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
-[![Downloads/week](https://img.shields.io/npm/dw/messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
-[![License](https://img.shields.io/npm/l/messageraft/cli.svg)](https://github.com/messageraft/cli/blob/main/package.json)
+[![Version](https://img.shields.io/npm/v/@messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@messageraft/cli.svg)](https://npmjs.org/package/@messageraft/cli)
+[![License](https://img.shields.io/npm/l/@messageraft/cli.svg)](https://github.com/messageraft/cli/blob/main/package.json)
 [![GitHub Issues](https://img.shields.io/github/issues/messageraft/cli.svg)](https://github.com/messageraft/cli/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/messageraft/cli.svg)](https://github.com/messageraft/cli/pulls)
 </div>
@@ -20,9 +20,14 @@
 ## 📝 Table of Contents
 
 <!-- toc -->
-- [About](#about)
-- [Getting Started](#getting-started)
-- [Authors](#authors)
+* [development.example.env](#developmentexampleenv)
+* [NOTE: only credentials configured in configuration.ts are used](#note-only-credentials-configured-in-configurationts-are-used)
+* [SENDGRID](#sendgrid)
+* [TWILIO](#twilio)
+* [OPTIONAL - Alternatively can provide during request](#optional---alternatively-can-provide-during-request)
+* [SLACK](#slack)
+* [OPTIONAL - Alternatively can provide during request](#optional---alternatively-can-provide-during-request-1)
+* [Start server locally](#start-server-locally)
 <!-- tocstop -->
 
 <!-- about -->
