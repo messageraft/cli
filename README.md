@@ -107,4 +107,4 @@ to view the documentation
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@pitops](https://github.com/pitops) - Idea & Initial work
+- [@pitops](https://github.com/pitops)
