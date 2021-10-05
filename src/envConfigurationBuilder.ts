@@ -17,6 +17,10 @@ const SENDGRID_TEMPLATE = `
    apiKey: process.env.SENDGRID_API_KEY
 `
 
+const MAILDEV_TEMPLATE = `
+   port: process.env.MAILDEV_PORT
+`
+
 const BASE_TEMPLATE = `
 export const configuration = () => {
    return {
@@ -40,6 +44,9 @@ export function EnvConfigurationBuilder(providers: ManifestProvider[]) {
           break
         case ProviderName.SENDGRID:
           accumulator += `${provider.name.toLowerCase()}: {${SENDGRID_TEMPLATE}}`
+          break
+        case ProviderName.MAILDEV:
+          accumulator += `${provider.name.toLowerCase()}: {${MAILDEV_TEMPLATE}}`
           break
         default:
           throw new Error(`Provider template not found: ${provider.name}`)

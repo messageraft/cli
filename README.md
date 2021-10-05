@@ -38,6 +38,9 @@ Messageraft is a notification gateway where you have a single API to send multip
 By configuring Messageraft with your 3rd party provider API keys you can use this service to send your message and Messageraft does the rest
 
 > Currently supported providers out of the box: **Sendgrid**, **Twilio** and **Slack**
+
+> You can also improve your email testing by using [maildev](https://github.com/maildev/maildev) in combination with the maildev provider we created for you!
+
 <!-- aboutstop -->
 
 ## 🏁 Getting Started <a name ="getting-started"></a>
