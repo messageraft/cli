@@ -1,6 +1,6 @@
 {
   "name": "@messageraft/cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "bin": {
     "messageraft": "./bin/run"
   },
@@ -48,7 +48,7 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@messageraft/common": "0.0.4",
+    "@messageraft/common": "0.0.5",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
